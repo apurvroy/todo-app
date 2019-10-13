@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title><%= title %></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/home.css">
+    </head>
+    <body>
+        <p id="heading">TODO App</p>
+        <form action="/create" method="POST">
+      <div class="data">
+          <label>Description</label>
+          <input type="text" name="description" placeholder="what you want to do" required>
+      </div>
+      <div id="wrap">
+      <div class="data">
+          <label>Catagory</label>
+                        <select name = "category" required>
+                            <option value = "home">Home</option>
+                            <option value = "work">Work</option>
+                            <option value = "school">School</option>
+                            <option value = "other">Other</option>
+                        </select>
+      </div>
+      <div class="data">
+         <input type="date" name="date" placeholder="select a date" required>
+      </div>
+        
+    </div>
+         <button type="submit">
+                <i class="fas fa-plus"></i>ADD TASK
+        </button>
+        </form>
+
+
+       
+    </body>
+
+</html>
