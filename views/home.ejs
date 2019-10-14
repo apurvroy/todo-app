@@ -4,8 +4,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         <link rel="stylesheet" href="css/home.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     </head>
     <body>
+        <div id="body">
         <p id="heading">TODO App</p>
         <form action="/create" method="POST">
       <div class="data">
@@ -23,28 +25,38 @@
                         </select>
       </div>
       <div class="data">
-         <input type="date" name="date" placeholder="select a date" required>
+          <label>Due Date</label>
+         <input type="date" name="date" placeholder="Select a date" required>
       </div>
         
     </div>
-         <button type="submit">
+         <button type="submit" class="add">
                 <i class="fas fa-plus"></i>ADD TASK
-        </button>
+         </button>
         </form>
+        <button type="submit" class="delete" >
+               <a><i class="fas fa-trash"></i>Delete</a>
+        </button>
      <div class="tasks">
          <ul>
+            
              <% for(let i of list){  %>
                 <div class="task">
-                    <input type="checkbox">
-                    <p><%= i.description %></p>
-                    <p><%= i.date %></p>
-                    <p><%= i.category %></p>
+                    <input type="checkbox" class="strike" id="<%= i._id %>">
+                    <span>
+                        <p><%= i.description %></p>
+                        <p><%= i.date %></p>
+                        <p><%= i.category %></p>
+                    </span>
                 </div>
             <% } %>
+            
          </ul>
      </div>
 
-       
+    </div>
+
+    <script type="text/javascript" src="/js/home.js"></script>
     </body>
 
 </html>

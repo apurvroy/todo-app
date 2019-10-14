@@ -21,4 +21,19 @@ module.exports.create=function(req,res){
         return res.redirect('back');
 
     })
+};
+
+module.exports.delete=function(req,res){
+    var items=[];
+    for(var key in req.body){
+        items=req.body[key];
+    }
+    List.remove({_id:{$in:items}},function(err, data){
+        if (err) 
+       { console.log(err,'Error in deleting the task');
+        return ;
+       }
+       return res.redirect('back');
+        
+    });
 }

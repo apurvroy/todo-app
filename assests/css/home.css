@@ -1,10 +1,15 @@
 body{
-    border:2px solid red;
+    background-color: lightgray;
+}
+#body{
+    box-shadow: 8px 8px grey;
     margin:0;
     font-family: sans-serif;
     width:50%;
     margin-left:25%;
     align-content: center;
+    background-color:white;
+    
 }
 #heading{
     margin-top:30px;
@@ -15,7 +20,7 @@ body{
 }
 .data{
      border:1px solid grey;
-    
+     border-right:0px;
      padding: 10px;
  }
 input{
@@ -45,17 +50,42 @@ select{
 #wrap div{
     width:50%;
 }
-button{
+i{
+    margin-right:5px; 
+}
+.add{
     font-size:25px;
    margin-left:30%;
-    background-color: #fffb00b0;
+    background-color: rgba(0, 0, 0, 0.801);
     font-family:sans-serif;
     padding:5px;
     font-weight: bolder;
     margin-top:10px;
+    color:white;
 }
-
+.delete{
+    font-size:25px;
+    margin-left:30%;
+     background-color: rgba(255, 0, 0, 0.795);
+     font-family:sans-serif;
+     padding:5px;
+     font-weight: bolder;
+     margin-top:10px;
+     color:white;
+}
+.delete a{
+   color:white;
+   text-decoration: none;
+   letter-spacing: 1px;
+}
 .task{
     border-top:1px solid black;
-    margin:10px;
+    margin-left:-15px;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+}
+
+.strike:checked + span{
+    text-decoration:line-through;
 }
