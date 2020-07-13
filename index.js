@@ -19,5 +19,6 @@ app.listen((process.env.PORT ||8000),function(err){
     console.log(`Error :${err}`);
 
     else
-    console.log(`server is running on the port: ${port}`);
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+    // console.log(`server is running on the port: ${port}`);
 });
