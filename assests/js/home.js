@@ -1,3 +1,4 @@
+// delete button
 $(document).ready(function(){
     $('.delete').on('click', function(){
     var item = new Array();
@@ -18,4 +19,12 @@ $(document).ready(function(){
         }
       });
     }
+
+
+    //task type
+    if($('.type').innerHTML=='hello')
+      $('.type').css("color","green");
+    
   });
+
+  

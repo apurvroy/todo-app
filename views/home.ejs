@@ -8,35 +8,40 @@
     </head>
     <body>
         <div id="body">
-        <p id="heading">TODO App</p>
+        <p id="heading">TODO APP</p>
+
+    <!-- creating the form     -->
         <form action="/create" method="POST">
       <div class="data">
           <label>Description</label>
-          <input type="text" name="description" placeholder="what you want to do" required>
+          <input type="text" name="description" placeholder="what is to be done?" required>
       </div>
       <div id="wrap">
-      <div class="data">
-          <label>Catagory</label>
-                        <select name = "category" required>
-                            <option value = "home">Home</option>
-                            <option value = "work">Work</option>
-                            <option value = "school">School</option>
-                            <option value = "other">Other</option>
-                        </select>
-      </div>
-      <div class="data">
-          <label>Due Date</label>
-         <input type="date" name="date" placeholder="Select a date" required>
-      </div>
+            <div class="data">
+                <label>Catagory</label>
+                                <select name = "category" required>
+                                    <option value = "home">Home</option>
+                                    <option value = "work">Work</option>
+                                    <option value = "school">School</option>
+                                    <option value = "other">Other</option>
+                                </select>
+            </div>
+            <div class="data">
+                <label>Due Date</label>
+                <input type="date" name="date" placeholder="Select a date" required>
+            </div>
         
     </div>
-         <button type="submit" class="add">
-                <i class="fas fa-plus"></i>ADD TASK
-         </button>
-        </form>
-        <button type="submit" class="delete" >
-               <a><i class="fas fa-trash"></i>Delete</a>
-        </button>
+        <div  id="add-delete">
+            <button type="submit" class="add">
+                    <i class="fas fa-plus"></i>ADD TASK
+            </button>
+            <button type="reset" class="delete" >
+                    <a><i class="fas fa-trash-alt"></i>Delete</a>
+            </button>
+        </div>
+    </form>
+       
      <div class="tasks">
          <ul>
             
@@ -44,9 +49,10 @@
                 <div class="task">
                     <input type="checkbox" class="strike" id="<%= i._id %>">
                     <span>
-                        <p><%= i.description %></p>
-                        <p><%= i.date %></p>
-                        <p><%= i.category %></p>
+                        <button class="type"><%= i.category %></button>
+                        <div id="description"><%= i.description %></div>
+                        <div id="date"><i class="far fa-calendar-alt"></i><%= i.date %></div>
+                        
                     </span>
                 </div>
             <% } %>
@@ -55,7 +61,7 @@
      </div>
 
     </div>
-
+<!-- javascript -->
     <script type="text/javascript" src="/js/home.js"></script>
     </body>
 

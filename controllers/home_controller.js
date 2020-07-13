@@ -28,7 +28,7 @@ module.exports.delete=function(req,res){
     for(var key in req.body){
         items=req.body[key];
     }
-    List.remove({_id:{$in:items}},function(err, data){
+    List.deleteMany({_id:{$in:items}},function(err, data){
         if (err) 
        { console.log(err,'Error in deleting the task');
         return ;
